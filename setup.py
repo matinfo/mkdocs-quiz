@@ -15,7 +15,7 @@ setup(
     author_email='m.meylan@gmail.com',
     install_requires=[
         "mkdocs",
-        "markdown",
+        "html",
     ],
     entry_points={
         'mkdocs.plugins': [
