@@ -33,6 +33,22 @@ class MkDocsQuizPlugin(BasePlugin):
         self.enabled = True
         self.dirty = False
 
+    def process_string(self, input_string):
+        """
+        Processes the input string to handle multiple occurrences of <?tag?>...<?/tag?>:
+        - Escapes the content (xyz) inside each tag pair and removes the tags.
+        - Leaves the rest of the string untouched.
+        """
+        # Pattern to match all <?tag?>content</?tag?> occurrences
+        pattern = r"<\?tag\?>(.*?)<\?/tag\?>"
+
+        # Function to escape matched content
+        def escape_match(match):
+            return html.escape(match.group(1), quote=True)
+
+        # Replace each match with its escaped content
+        return re.sub(pattern, escape_match, input_string)
+
     def on_startup(self, *, command, dirty: bool) -> None:
         """Configure the plugin on startup."""
         self.dirty = dirty
@@ -73,7 +89,7 @@ class MkDocsQuizPlugin(BasePlugin):
                 input_type = as_checkboxes and "checkbox" or "radio"
                 correct = is_correct and "correct" or ""
                 full_answers.append('<div><input type="{}" name="answer" value="{}" id="{}" {}><label for="{}">{}</label></div>'.format(
-                    input_type, i, input_id, correct, input_id, html.escape(answers[i], quote=True)))
+                    input_type, i, input_id, correct, input_id, self.process_string(answers[i])))
             # Get the content of the quiz
             content = quiz_lines[quiz_lines.index("content:") + 1:]
             quiz = '<div class="quiz"><h3>{}</h3><form><fieldset>{}</fieldset><button type="submit" class="quiz-button">Envoyez</button></form><section class="content hidden">{}</section></div>'.format(
