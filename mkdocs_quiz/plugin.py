@@ -2,6 +2,7 @@ from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.files import Files
 from mkdocs.structure.pages import Page
+import markdown
 from importlib import resources as impresources
 import re
 from . import css, js
@@ -72,10 +73,10 @@ class MkDocsQuizPlugin(BasePlugin):
                 input_type = as_checkboxes and "checkbox" or "radio"
                 correct = is_correct and "correct" or ""
                 full_answers.append('<div><input type="{}" name="answer" value="{}" id="{}" {}><label for="{}">{}</label></div>'.format(
-                    input_type, i, input_id, correct, input_id, answers[i]))
+                    input_type, i, input_id, correct, input_id, markdown.markdown(answers[i])))
             # Get the content of the quiz
             content = quiz_lines[quiz_lines.index("content:") + 1:]
-            quiz = '<div class="quiz"><h3>{}</h3><form><fieldset>{}</fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">{}</section></div>'.format(
+            quiz = '<div class="quiz"><h3>{}</h3><form><fieldset>{}</fieldset><button type="submit" class="quiz-button">Envoyez</button></form><section class="content hidden">{}</section></div>'.format(
                 question, "".join(full_answers), "\n".join(content))
             # old_quiz = "quiz-start" + match + "quiz-end"
             old_quiz = QUIZ_START_TAG + match + QUIZ_END_TAG

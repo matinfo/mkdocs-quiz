@@ -2,19 +2,20 @@ from distutils.core import setup
 
 setup(
     name='mkdocs_quiz',
-    version='0.0.41',
+    version='0.0.5',
     packages=['mkdocs_quiz',],
     package_data={'mkdocs_quiz': ['css/*', 'js/*']},
     include_package_data=True,
-    license='Apache License 2.0',
+    license='MIT',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/skyface753/mkdocs-quiz',
+    url='https://github.com/matinfo/mkdocs-quiz',
     description='A mkdocs plugin to create a quiz in your markdown document.',
-    author='Sebastian Jörz',
-    author_email='sjoerz@skyface.de',
+    author='Mathieu Meylan',
+    author_email='m.meylan@gmail.com',
     install_requires=[
         "mkdocs",
+        "markdown",
     ],
     entry_points={
         'mkdocs.plugins': [
