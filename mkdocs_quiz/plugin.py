@@ -44,7 +44,7 @@ class MkDocsQuizPlugin(BasePlugin):
 
         # Function to escape matched content
         def escape_match(match):
-            return html.escape(match.group(1), quote=True)
+            return '<code>{}</code>'.format(html.escape(match.group(1), quote=True))
 
         # Replace each match with its escaped content
         return re.sub(pattern, escape_match, input_string)
