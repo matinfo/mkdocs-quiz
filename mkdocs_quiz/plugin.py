@@ -92,7 +92,7 @@ class MkDocsQuizPlugin(BasePlugin):
                     input_type, i, input_id, correct, input_id, self.process_string(answers[i])))
             # Get the content of the quiz
             content = quiz_lines[quiz_lines.index("content:") + 1:]
-            quiz = '<div class="quiz"><h3>{}</h3><form><fieldset>{}</fieldset><button type="submit" class="quiz-button">Envoyez</button></form><section class="content hidden">{}</section></div>'.format(
+            quiz = '<div class="quiz"><h3>{}</h3><form><fieldset>{}</fieldset><button type="submit" class="quiz-button">Vérifier</button></form><section class="content hidden">{}</section></div>'.format(
                 question, "".join(full_answers), "\n".join(content))
             # old_quiz = "quiz-start" + match + "quiz-end"
             old_quiz = QUIZ_START_TAG + match + QUIZ_END_TAG
