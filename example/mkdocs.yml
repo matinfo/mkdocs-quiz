@@ -1,4 +1,7 @@
 site_name: My Docs
+
+repo_url: https://github.com/matinfo/mkdocs-quiz
+
 theme:
   name: material
   palette:

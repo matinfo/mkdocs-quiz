@@ -51,7 +51,7 @@ content:
 <?/quiz?>
 ```
 
-## [Demo](https://skyface753.github.io/mkdocs-quiz/)
+## [Demo](https://matinfo.github.io/mkdocs-quiz/)
 
 ### With HTML tag
 
