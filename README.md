@@ -5,7 +5,7 @@
 Install the package with pip:
 
 ```bash
-pip install mkdocs_quiz
+pip install git+https://github.com/matinfo/mkdocs-quiz.git@v0.0.9
 ```
 
 ## Create your first quiz
@@ -21,7 +21,7 @@ plugins:
 
 Now you can create your first quiz directly in markdown:
 
-```bash
+```markdown
 <?quiz?>
 question: Are you ready?
 answer-correct: Yes!
@@ -40,7 +40,7 @@ content:
 
 You can also create a multiple choice quiz, by providing multiple answers as correct.
 
-```bash
+```markdown
 <?quiz?>
 question: Are you ready?
 answer-correct: Yes!
@@ -52,6 +52,22 @@ content:
 ```
 
 ## [Demo](https://skyface753.github.io/mkdocs-quiz/)
+
+### With HTML tag
+
+Now support to display HTML tag in a question with `<?tag?> ... <?/tag?>`
+
+```markdown
+<?quiz?>
+question: 4. What is the syntax to use to declare the document character encoding as UTF-8?
+answer: <?tag?><meta encoding="text/html; charset=utf-8"><?/tag?>
+answer: <?tag?><meta charset="text/html; UTF-8"><?/tag?>
+answer-correct: <?tag?><meta charset="utf-8"><?/tag?>
+answer: <?tag?><meta lang="utf-8"><?/tag?>
+content:
+<?/quiz?>
+```
+
 
 ## Screenshots
 

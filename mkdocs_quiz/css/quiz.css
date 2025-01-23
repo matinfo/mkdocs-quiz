@@ -7,11 +7,11 @@
 .quiz > *:first-child {
   margin-top: 0;
 }
-.hidden {
+.quiz .hidden {
   display: none;
 }
 
-form button {
+.quiz form button {
   background-color: var(--md-primary-fg-color);
   border: none;
   color: var(--md-primary-bg-color);
@@ -23,39 +23,39 @@ form button {
   border-radius: 5px;
 }
 
-.wrong label,
-.wrong label code {
+.quiz .wrong label,
+.quiz .wrong label code {
   color: red;
 }
-.correct label,
-.correct label code {
+.quiz .correct label,
+.quiz .correct label code {
   color: green;
 }
 
-fieldset {
+.quiz fieldset {
   border: none;
   display: flex;
   flex-direction: column;
 }
-fieldset input {
+.quiz fieldset input {
   margin: 0 10px;
 }
-fieldset label {
+.quiz fieldset label {
   margin: 0 10px;
 }
 
-label.correct {
+.quiz label.correct {
   color: green;
 }
-label.wrong {
+.quiz label.wrong {
   color: red;
 }
-input[type='radio'].correct {
+.quiz input[type='radio'].correct {
   accent-color: green;
 }
-input[type='radio'].wrong {
+.quiz input[type='radio'].wrong {
   accent-color: red;
 }
-.content {
+.quiz .content {
   margin: 10px;
 }
