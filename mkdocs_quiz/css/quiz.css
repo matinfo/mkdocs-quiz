@@ -46,9 +46,11 @@
   cursor: pointer;
 }
 
+.quiz .correct {
+  background-color: antiquewhite;
+}
 .quiz label.correct {
   color: green;
-  background-color: antiquewhite;
 }
 .quiz label.wrong {
   color: red;
