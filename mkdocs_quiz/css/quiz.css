@@ -39,13 +39,16 @@
 }
 .quiz fieldset input {
   margin: 0 10px;
+  cursor: pointer;
 }
 .quiz fieldset label {
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .quiz label.correct {
   color: green;
+  background-color: antiquewhite;
 }
 .quiz label.wrong {
   color: red;

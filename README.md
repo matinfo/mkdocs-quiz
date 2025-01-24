@@ -5,7 +5,7 @@
 Install the package with pip:
 
 ```bash
-pip install git+https://github.com/matinfo/mkdocs-quiz.git@v0.0.9
+pip install git+https://github.com/matinfo/mkdocs-quiz.git@v0.0.10
 ```
 
 ## Create your first quiz
